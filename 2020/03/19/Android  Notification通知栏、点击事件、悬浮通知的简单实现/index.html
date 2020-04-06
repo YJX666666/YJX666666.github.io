@@ -42,9 +42,6 @@
   
 
   
-    
- 	  <script src="/lib/clickLove.js"></script>
-  
   
 
 
@@ -59,7 +56,8 @@
       
 
 
-<div class="overlay" style="background: #4d4d4d;background: url('/img/biubiubiu.gif') no-repeat ;"></div>
+<!--<div class="overlay" style="background: #4d4d4d;background: url('/img/sun.gif') no-repeat ;"></div>-->
+<!--左侧边栏上半部分不设置-->
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -95,11 +93,13 @@
 				
 					<a class="github" href="https://github.com/YJX666666" title="GitHub" target="_blank"><i class="icon-github"></i></a>
 				
-					<a class="gitee" href="https://gitee.com/android_yjx/comments" title="gitee" target="_blank"><i class="icon-gitee"></i></a>
+					<a class="csdn" href="https://blog.csdn.net/qq_44720366" title="CSDN" target="_blank"><i class="icon-csdn"></i></a>
 				
 					<a class="qq" href="/img/1563782588.jpg" title="QQ" target="_blank"><i class="icon-qq"></i></a>
 				
 					<a class="weixin" href="/img/friends.png" title="wechat" target="_blank"><i class="icon-weixin"></i></a>
+				
+					<a class="mail" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=bQ4CCQgUBxUtCwIVAAwEAUMOAgA" title="NULL" target="_blank"><i class="icon-mail"></i></a>
 				
 			</div>
 		
@@ -142,11 +142,13 @@
 					
 						<a class="github" target="_blank" href="https://github.com/YJX666666" title="GitHub"><i class="icon-github"></i></a>
 			        
-						<a class="gitee" target="_blank" href="https://gitee.com/android_yjx/comments" title="gitee"><i class="icon-gitee"></i></a>
+						<a class="csdn" target="_blank" href="https://blog.csdn.net/qq_44720366" title="CSDN"><i class="icon-csdn"></i></a>
 			        
 						<a class="qq" target="_blank" href="/img/1563782588.jpg" title="QQ"><i class="icon-qq"></i></a>
 			        
 						<a class="weixin" target="_blank" href="/img/friends.png" title="wechat"><i class="icon-weixin"></i></a>
+			        
+						<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=bQ4CCQgUBxUtCwIVAAwEAUMOAgA" title="NULL"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -421,6 +423,30 @@
 
 
 
+  <div id="giteement-ctn"></div>
+  
+    <link rel="stylesheet" href="/lib/default.css">
+    <script src="/lib/giteement.browser.js"></script>
+  
+  <script>
+  <!-- id: "Android  Notification通知栏、点击事件、悬浮通知的简单实现" -->
+  var giteement = new Giteement({
+    id: '20200319163726',
+    owner: 'Android_YU',
+    repo: 'comments',
+    backcall_uri: 'https://yjx666666.github.io',
+    oauth_uri: 'https://cors-anywhere.herokuapp.com/https://gitee.com/oauth/token',
+    oauth: {
+      client_id: '4ec73ac870790f4bb6e4c2366788f12d7c9f2f85a2e62b1dbbf61e457c36caa7',
+      client_secret: 'ad48f11278d7f74b85a2e4006584f4a9975a55ad169f881a97d72d9bfaec293d'
+    },
+  })
+  giteement.render('giteement-ctn')
+  </script>
+
+
+
+
 
 
 
@@ -599,6 +625,15 @@
               </a>
             </li>
           
+            <li class="search-li">
+              <a href="https://gitee.com/android_yjx/comments" target="_blank" class="search-title" >
+                
+                  <i class="icon-link icon"></i>
+                
+                码云
+              </a>
+            </li>
+          
         </ul>
   		
     	</section>
@@ -724,6 +759,56 @@
   
   <!-- <script async type="text/javascript" size="90" alpha="0.2" zIndex="0" src="/plugins/ribbon.js/ribbon.min.js"></script> -->
   
+  
+    <script type="text/javascript" src="/plugins/live2d-widget.js/L2Dwidget.min.js"></script>
+<script type="text/javascript">
+  /**
+   * 完整配置请参考：https://l2dwidget.js.org/docs/class/src/index.js~L2Dwidget.html#instance-method-init
+   */
+  var pluginModelPath = "assets/", // 模型的文件路径，无需更改
+    pluginRootPath = "/live2d_models/"; // 插件的路径，无需更改
+  //特定的模型json文件名称
+  var modelPathJson = {
+    "epsilon2_1": "Epsilon2.1",
+    "gf": "Gantzert_Felixander",
+    "haru/01": "haru01",
+    "haru/02": "haru02",
+    "nietzsche": "nietzche"
+  }
+
+  
+    var modelName = "hibiki";
+  
+
+  var modelJsonPath = "";
+  if (modelPathJson[modelName]) {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelPathJson[modelName] +
+      ".model.json";
+  } else {
+    modelJsonPath = pluginRootPath + modelName + "/" + pluginModelPath + modelName + ".model.json";
+  }
+  L2Dwidget.init({
+    model: {
+      jsonPath: modelJsonPath
+    },
+    display: {
+       position: "left", 
+       width: 145, 
+       height: 315, 
+       hOffset: 50, 
+       vOffset: 50 
+    },
+    mobile: {
+       show: false, 
+       scale: 0.6 
+    },
+    react: {
+       opacity: 0.8 
+    }
+  })
+
+</script>
+
   
   
 </body>
